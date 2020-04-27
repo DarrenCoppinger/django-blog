@@ -1,0 +1,8 @@
+pip install django==1.11.29
+django-admin startproject blog .
+pip freeze > requirements.txt
+chmod +x manage.py
+python3 manage.py migrate
+python3 manage.py runserver
+
+echo -e "*.sqlite3\n*.pyc\n__pycache__/" > .gitignore
