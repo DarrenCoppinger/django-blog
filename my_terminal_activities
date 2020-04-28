@@ -6,3 +6,36 @@ python3 manage.py migrate
 python3 manage.py runserver
 
 echo -e "*.sqlite3\n*.pyc\n__pycache__/" > .gitignore
+
+git status
+git add .
+git commit -m "Created simple django blog project"
+
+python --version
+
+git status
+git add .
+git commit -m "Repo synced with Travis"
+
+pip3 install pillow
+pip3 freeze > requirements.txt
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+pip3 install django-forms-bootstrap
+
+
+# This is for the database setup on heroku postgres
+pip3 install dj-database-url psycopg2
+python3 manage.py makemigrations
+python3 manage.py migrate
+python3 manage.py createsuperuser
+python3 manage.py runserver
+
+
+pip3 install whitenoise
+pip3 freeze > requirements.txt
+
+
+pip3 install gunicorn
+pip3 freeze > requirements.txt
